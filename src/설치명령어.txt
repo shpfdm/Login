@@ -1,0 +1,2 @@
+redux-thunk
+npm install redux-thunk
