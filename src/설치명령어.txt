@@ -1,2 +1,5 @@
 redux-thunk
 npm install redux-thunk
+
+lodash
+npm install lodash

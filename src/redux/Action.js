@@ -27,11 +27,14 @@ export const UPDATE_PHONE = "UPDATE_PHONE";
 export const UPDATE_ADDRESS_1 = "UPDATE_ADDRESS_1";
 export const UPDATE_ADDRESS_2 = "UPDATE_ADDRESS_2";
 export const UPDATE_PROFILE_IMAGE = "UPDATE_PROFILE_IMAGE";
-export const UPDATE_CREATED_AT = "UPDATE_CREATED_AT";
 
 export const fetchUserData = () => async (dispatch) => {
     try {
         const response = await axios.get(url, config);
+
+        // const data = [
+
+        // ]
         dispatch({
             type: FETCH_USER_SUCCESS,
             payload: response.data
@@ -66,12 +69,7 @@ export const updateAddress2 = (address_2) => ({
     payload: address_2,
 });
 
-export const updateProfileImage = (profileImage) => ({
+export const updateProfileImage = (profile_image) => ({
     type: UPDATE_PROFILE_IMAGE,
-    payload: profileImage,
-});
-
-export const updateCreatedAt = (createdAt) => ({
-    type: UPDATE_CREATED_AT,
-    payload: createdAt,
+    payload: profile_image,
 });
