@@ -28,7 +28,6 @@ export const UPDATE_ADDRESS_1 = "UPDATE_ADDRESS_1";
 export const UPDATE_ADDRESS_2 = "UPDATE_ADDRESS_2";
 export const UPDATE_PROFILE_IMAGE = "UPDATE_PROFILE_IMAGE";
 export const UPDATE_CREATED_AT = "UPDATE_CREATED_AT";
-export const RESET = "RESET";
 
 export const fetchUserData = () => async (dispatch) => {
     try {
@@ -75,8 +74,4 @@ export const updateProfileImage = (profileImage) => ({
 export const updateCreatedAt = (createdAt) => ({
     type: UPDATE_CREATED_AT,
     payload: createdAt,
-});
-
-export const reset = () => ({
-    type: RESET,
 });

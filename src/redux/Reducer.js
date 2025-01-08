@@ -1,5 +1,5 @@
 import { FETCH_USER_SUCCESS } from "./Action";
-import { UPDATE_EMAIL, UPDATE_NAME, UPDATE_PHONE, UPDATE_ADDRESS_1, UPDATE_ADDRESS_2, UPDATE_PROFILE_IMAGE, UPDATE_CREATED_AT, RESET } from "./Action";
+import { UPDATE_EMAIL, UPDATE_NAME, UPDATE_PHONE, UPDATE_ADDRESS_1, UPDATE_ADDRESS_2, UPDATE_PROFILE_IMAGE, UPDATE_CREATED_AT } from "./Action";
 
 export const initialState = {
     email: "",
@@ -59,10 +59,6 @@ const authReducer = (state = initialState, action) => {
                 ...state,
                 createdAt: action.payload,
             };
-        case RESET:
-            return {
-                initialState,
-            }
         default:
             return state;
     }

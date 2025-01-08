@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchUserData } from "./redux/Action";
 import { Link } from "react-router-dom";
 import { initialState } from "./redux/Reducer";
-import { reset } from "./redux/Action";
 
 function MyPage() {
     const dispatch = useDispatch();
@@ -14,7 +13,7 @@ function MyPage() {
     }, [all]);
 
     useEffect(() => {
-        if (all === initialState) {
+        if (JSON.stringify(all) === JSON.stringify(initialState)) {
             dispatch(fetchUserData());
         }
     }, [dispatch, all]);
@@ -50,7 +49,7 @@ function MyPage() {
                 <div className="inBox">{all.created_at}</div>
             </div>
             <Link to="/mypage/update"><button>수정하기</button></Link>
-            <button onClick={() => dispatch(reset())}>리셋</button>
+            <button onClick={() => dispatch(fetchUserData())}>리셋</button>
         </div>
     );
 }
